@@ -1,1 +1,1 @@
-web: gunicorn FinPoint.wsgi:application
+web: gunicorn FinPoint.wsgi:application --bind 0.0.0.0:8080
