@@ -19,6 +19,8 @@ load_dotenv()  # .env 파일 로드
 EXCHANGE_API_KEY = os.getenv('EXCHANGE_API_KEY')
 FINLIFE_API_KEY = os.getenv('FINLIFE_API_KEY')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,12 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e7%h-d=8(o@c1znstir1e4^l)%qp*y3$w)s6zq0pbsi92r^1^w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -68,6 +69,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    # CloudType 배포 도메인 추가 (예: "https://your-project-name.cloudtype.app")
 ]
 
 CORS_ALLOW_CREDENTIALS = True
