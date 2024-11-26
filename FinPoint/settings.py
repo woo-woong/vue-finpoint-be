@@ -187,3 +187,5 @@ REST_FRAMEWORK = {
 # 세션 설정 추가
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 SESSION_COOKIE_AGE = 1209600  # 2주
+
+APPEND_SLASH = False
