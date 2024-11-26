@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="FinPoint">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/accounts.zip!/" />
+      <root url="jar://$PROJECT_DIR$/FinPoint.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
