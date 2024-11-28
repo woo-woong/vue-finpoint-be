@@ -33,10 +33,23 @@ def login_view(request):
     if user is not None:
         login(request, user)
         serializer = UserDetailSerializer(user)
-        return Response({
+        response = Response({
             "message": "로그인 성공",
             "user": serializer.data
         })
+        
+        # 쿠키 설정 추가
+        response.set_cookie(
+            'sessionid',
+            request.session.session_key,
+            domain='finpoint-woo-woong.vercel.app',
+            secure=True,
+            httponly=True,
+            samesite='None',
+            max_age=60*60*24*14  # 14일
+        )
+        
+        return response
     else:
         return Response({
             "message": "아이디 또는 비밀번호가 잘못되었습니다."
