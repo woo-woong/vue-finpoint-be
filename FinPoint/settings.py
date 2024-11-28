@@ -88,8 +88,8 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOW_CREDENTIALS = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_HTTPONLY = True
 
@@ -191,9 +191,12 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
 APPEND_SLASH = False
 
 # 쿠키 설정
-CSRF_COOKIE_DOMAIN = None  # 실제 도메인에 맞게 설정
-SESSION_COOKIE_DOMAIN = None  # 실제 도메인에 맞게 설정
+CSRF_COOKIE_DOMAIN = '.finpoint-woo-woong.vercel.app'
+SESSION_COOKIE_DOMAIN = '.finpoint-woo-woong.vercel.app'
 
-# 쿠키 만료 시간 설정
+# 쿠키 만료 시간 설정`
 CSRF_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
+
+if os.environ.get('HTTPS') == 'on':
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
