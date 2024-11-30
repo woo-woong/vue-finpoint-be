@@ -190,9 +190,9 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
 APPEND_SLASH = False
 
 # 쿠키 설정 수정
-CSRF_COOKIE_DOMAIN = 'finpoint-woo-woong.vercel.app'  # 앞의 점(.) 제거
-SESSION_COOKIE_DOMAIN = 'finpoint-woo-woong.vercel.app'  # 앞의 점(.) 제거
-
+# 도메인 설정 부분 수정
+CSRF_COOKIE_DOMAIN = None  # 또는 현재 Cloudtype에서 제공하는 도메인으로 설정
+SESSION_COOKIE_DOMAIN = None  # 또는 현재 Cloudtype에서 제공하는 도메인으로 설정
 # 쿠키 만료 시간 설정`
 CSRF_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
 
