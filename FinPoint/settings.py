@@ -35,7 +35,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',  # 개발 환경용
-    'finpoint-woo-woong.vercel.app'  # Cloudtype 도메인
 ]
 
 # Application definition
@@ -91,7 +90,7 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_HTTPONLY = False
-SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_HTTPONLY = False
 
 # CSRF 설정 추가
 CSRF_TRUSTED_ORIGINS = [
