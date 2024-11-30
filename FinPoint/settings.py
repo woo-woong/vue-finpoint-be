@@ -72,7 +72,16 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://finpoint-woo-woong.vercel.app"
+    "https://finpoint-woo-woong.vercel.app",
+    "https://port-0-vue-finpoint-be1-m3y4wp1g9fd42fe9.sel4.cloudtype.app"
+]
+
+# CSRF 설정 추가
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://finpoint-woo-woong.vercel.app',
+    'https://port-0-vue-finpoint-be1-m3y4wp1g9fd42fe9.sel4.cloudtype.app'
 ]
 
 CORS_ALLOW_METHODS = [
@@ -92,12 +101,7 @@ SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_HTTPONLY = False
 
-# CSRF 설정 추가
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'https://finpoint-woo-woong.vercel.app'
-]
+
 
 # 커스텀 유저 모델 설정
 AUTH_USER_MODEL = 'accounts.User'
@@ -191,8 +195,8 @@ APPEND_SLASH = False
 
 # 쿠키 설정 수정
 # 도메인 설정 부분 수정
-CSRF_COOKIE_DOMAIN = None  # 또는 현재 Cloudtype에서 제공하는 도메인으로 설정
-SESSION_COOKIE_DOMAIN = None  # 또는 현재 Cloudtype에서 제공하는 도메인으로 설정
+CSRF_COOKIE_DOMAIN = 'port-0-vue-finpoint-be1-m3y4wp1g9fd42fe9.sel4.cloudtype.app'
+SESSION_COOKIE_DOMAIN = 'port-0-vue-finpoint-be1-m3y4wp1g9fd42fe9.sel4.cloudtype.app'
 # 쿠키 만료 시간 설정`
 CSRF_COOKIE_AGE = 60 * 60 * 24 * 14  # 14일
 
